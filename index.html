@@ -16,7 +16,7 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/c21e2c2f2d.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-    <script src="index.js"></script>
+
     <title>Melisa Fernández</title>
 </head>
 
@@ -25,16 +25,24 @@
         <nav class="contenedor-nav">
             <div class="contenedor-logo">
                 <img src="assets/Melisa fernández.png" alt="logo">
-                <p>Melisa Fernández</p>
+                <!-- <p>Melisa Fernández</p>-->
             </div>
-            <div class="contenedor-lista">
+
+            <!-- Botón de menú hamburguesa -->
+            <div class="menu-hamburguesa" onclick="toggleMenu()">
+                <div class="linea"></div>
+                <div class="linea"></div>
+                <div class="linea"></div>
+            </div>
+
+            <div class="contenedor-lista" id="menu">
                 <ul class="lista">
-                    <li><a href="#section-1">Sobre mi</a></li>
-                    <li><a href="#section-2">Skills</a></li>
-                    <li><a href="#section-3">Hobbies</a></li>
-                    <li><a href="#section-4">Formación</a></li>
-                    <li><a href="#section-5">Proyectos</a></li>
-                    <li><a href="#section-6">Contacto</a></li>
+                    <li><a href="#section-1" onclick="closeMenu()">Sobre mi</a></li>
+                    <li><a href="#section-2" onclick="closeMenu()">Skills</a></li>
+                    <li><a href="#section-3" onclick="closeMenu()">Hobbies</a></li>
+                    <li><a href="#section-4" onclick="closeMenu()">Formación</a></li>
+                    <li><a href="#section-5" onclick="closeMenu()">Proyectos</a></li>
+                    <li><a href="#section-6" onclick="closeMenu()">Contacto</a></li>
                 </ul>
 
 
@@ -43,30 +51,24 @@
 
     </header>
     <main>
-        <section class="contenedor-principal__sobre-mi">
-            <div class="contenendor-primario__sobre-mi">
-                <div class="descripcion__sobre-mi">
-                    <h1>Hola mi nombre es Melisa Fernández</h1>
-                    <p>Soy estudiante de la carrera Frontend en Alura Latam y actualmente estoy relizando un proyecto
-                        Oracle ONE, que consiste en construir y diseñar mi porfolio personal.</p>
-                    <div class="descripcion__sobre-mi-botones"> 
-                        <button><a
-                                href="https://github.com/Meli30">Github</a></button>
-                        <button><a
-                                href="https://www.linkedin.com/in/melisa-fern%C3%A1ndez-a0a823294/">Linkedin</a></button>
-                        <button><a href="https://www.instagram.com/?hl=es-la">Instagram</a></button>
-                        <!--<button><a
-                            href="">Curriculum</a></button>-->
-                    
-                    </div>
 
-                </div>
-                <div class="imagen_sobre-mi">
-                    <img src="assets/img.jpg" alt="foto sobre mi">
+        <div class="banner-combinado">
+            <div class="texto-banner">
+                <h2>¡Hola, soy Melisa Fernández!</h2>
+                <p>Desarrolladora web en formación</p>
+                <div class="enlaces">
+                    <a href="https://github.com/Meli30">Github</a>
+                    <a href="https://www.linkedin.com/in/melisa-fern%C3%A1ndez-a0a823294/">Linkedin</a>
+                    <a href="https://www.instagram.com/?hl=es-la">Instagram</a>
                 </div>
             </div>
+            <div class="imagen_sobre-mi">
+                <img src="assets/img.jpg" alt="foto de Melisa Fernández">
+            </div>
+        </div>
 
-            <div class="contenedor-secundario__sobre-mi" id="section-1">
+        <section class="contenedor-principal__sobre-mi " id="section-1">
+            <div class="contenedor-descripcion__sobre-mi">
                 <h2>Sobre mi</h2>
                 <p>Soy apasionada por el desarrollo web con conocimientos en HTML, CSS y JavaScript.
                     En constante aprendizaje para mejorar mis habilidades técnicas.
@@ -75,7 +77,13 @@
                     Me considero una persona proactiva, con capacidad de adaptación y motivación para aprender nuevas
                     tecnologías. Disfrutando del trabajo en equipo y colaborando para encontrar soluciones eficientes a
                     problemas complejos</p>
+
+                <div class="contenedor-firma__sobre-mi">
+                    <img src="assets/Melisa fernández.png" alt="firma Melisa Fernández">
+                </div>
             </div>
+
+
         </section>
 
         <section class="contenedor-principal_skill" id="section-2">
@@ -215,7 +223,7 @@
                         <img src="assets/proyectos/juego.png" alt="juego">
                     </div>
                     <div class="cards-experiencia-titulo">
-                        <h4>Juego Numero Secreto</h4>
+                        <h4>Juego Número Secreto</h4>
                         <p>Challenge del curso lógica de programación</p>
                         <button><a href="https://github.com/Meli30/JuegoNumeroSecreto">Repositorio</a></button>
                         <button><a href="https://meli30.github.io/JuegoNumeroSecreto/">Demo</a></button>
@@ -237,35 +245,28 @@
             </div>
         </section>
 
-        <section id="section-6">
+        <section class="contenedor-principal_contacto" id="section-6">
+            <div class="contenedor-primario_contacto">
+                <h4>¿Quieres contactarme?</h4>
+                <img src="assets/contacto.png" alt="imagen de contacto">
+                <p>Completa el siguiente formulario y me pondré en contacto lo antes posible.</p>
+            </div>
+            <div class="contenedor-secundario_contacto">
+                <div class="contenedor-formulario_contacto">
+                    <form action="" id="myForm">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="subject">Asunto</label>
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="message">Mensaje</label>
+                        <textarea name="message" id="message" required></textarea>
 
-            <div class="contenedor-principal_contacto">
-                <div class="contenedor-primario_contacto">
-                    <h4>¿Quieres contactarme?</h4>
-                    <img src="assets/contacto.png" alt="imagen de contacto">
-                    <p>Completa el siguiente formulario y me pondré en contacto lo antes posibles <i><i
-                                class="fa-solid fa-arrow-right"></i></i></p>
-                </div>
-                <div class="contenedor-secundario_contacto">
+                        <button type="submit">Enviar Mensaje</button>
+                    </form>
 
-
-
-                    <div class="contenedor-formulario_contacto">
-                        <form action="" id="myForm">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" required>
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                            <label for="subject">Asunto</label>
-                            <input type="text" id="subject" name="subject" required>
-                            <label for="message">Mensaje</label>
-                            <textarea name="message" id="message" required></textarea>
-
-                            <button type="submit">Enviar Mensaje</button>
-                        </form>
-
-                        <p id="errorMessage" style="color:red;"></p>
-                    </div>
+                    <p id="errorMessage" style="color:red;"></p>
                 </div>
             </div>
 
@@ -275,6 +276,7 @@
     <footer class="contenedor-footer">
         <p>Creado por Melisa Fernández 2024</p>
     </footer>
+    <script src="index.js"></script>
 </body>
 
 </html>
