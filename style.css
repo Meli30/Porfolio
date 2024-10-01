@@ -18,13 +18,10 @@ a {
     width: 100%;
     z-index: 1000;
     background-color: transparent;
-    /* Fondo transparente inicialmente */
-    transition: background-color 0.3s ease;
 }
 
 .contenedor-header.scrolled {
     background: url(assets/imagen.jpg);
-    /* Cambia el color del header al hacer scroll */
 }
 
 .contenedor-nav {
@@ -74,6 +71,7 @@ a {
     display: flex;
     justify-content: space-between;
     gap: 30px;
+    font-weight: 500;
 }
 
 .lista li {
@@ -82,7 +80,6 @@ a {
 
 .banner-combinado {
     background-image: url('assets/imagen.jpg');
-    /* Ruta a tu imagen de banner */
     background-size: cover;
     background-position: center;
     height: 700px;
@@ -137,10 +134,9 @@ a {
 .imagen_sobre-mi img {
     width: 300px;
     height: 300px;
-    border-radius: 20%;
+    border-radius: 50%;
 
 }
-
 
 /*sobre mi*/
 .contenedor-principal__sobre-mi {
@@ -152,7 +148,6 @@ a {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-
 }
 
 .contenedor-descripcion__sobre-mi h2 {
@@ -160,11 +155,9 @@ a {
     padding: 20px;
 }
 
-
 .contenedor-descripcion__sobre-mi p {
     font-size: 25px;
     text-align: center;
-
 }
 
 .contenedor-firma__sobre-mi {
@@ -254,6 +247,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 40px;
 }
 
 .contenedor-principal_formacion h2 {
@@ -316,8 +310,8 @@ a {
 }
 
 .cards-experiencia:hover {
-    width: 600px;
-    height: 400px;
+    width: 550px;
+    height: 350px;
 }
 
 .cards-experiencia img {
@@ -328,7 +322,7 @@ a {
 }
 
 .cards-experiencia-titulo {
-    background-color: rgb(255, 254, 254);
+    background-color:#e0dada ;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -357,14 +351,12 @@ a {
     transform: translateY(0);
 }
 
-
 /*contacto*/
 .contenedor-principal_contacto {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 10px;
-
+    padding: 5px;
 }
 
 .contenedor-primario_contacto {
@@ -410,7 +402,6 @@ a {
     gap: 10px;
     height: 550px;
     width: 400px;
-
 }
 
 .contenedor-formulario_contacto label {
@@ -451,6 +442,54 @@ a {
 
 /*tableta*/
 @media screen and (min-width:768px) and (max-width:1023px) {
+    .contenedor-header.scrolled {
+        background: transparent;
+        display: none;
+    }
+
+    .contenedor-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contenedor-lista {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        left: 10px;
+        border-radius: 10px;
+        background: url(assets/imagen.jpg);
+    }
+
+    .contenedor-lista.activo {
+        display: flex;
+    }
+
+    .menu-hamburguesa {
+        display: flex;
+    }
+
+    .lista {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .lista li {
+        margin: 10px 2px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .lista li:hover {
+        background-color: rgb(196, 193, 193);
+        border-radius: 20px;
+    }
+
+
     .contenedor-descripcion__sobre-mi h2 {
         font-size: 30px;
     }
@@ -490,6 +529,7 @@ a {
 
     .contenedor-header.scrolled {
         background: transparent;
+        display: none;
     }
 
     .contenedor-nav {
@@ -552,7 +592,7 @@ a {
     .imagen_sobre-mi {
         align-items: center;
         width: 200px;
-        padding-top: 6px;
+        padding: 5px;
     }
 
     .imagen_sobre-mi img {
@@ -563,9 +603,12 @@ a {
     }
 
     /*sobre mi*/
+    .contenedor-principal__sobre-mi{
+        padding: 10px;
+    }
     .contenedor-descripcion__sobre-mi h2 {
         font-size: 20px;
-        padding: 10px;
+        padding: 5px;
     }
 
     .contenedor-descripcion__sobre-mi p {
